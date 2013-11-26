@@ -1,0 +1,21 @@
+<?php
+return [
+    'asset_manager' => [
+        'caching' => [
+            'default' => [
+                'cache'   => 'FilePath',
+                'options' => [
+                    'dir' => getcwd() .'/public',
+                ],
+            ],
+        ],
+        'filters' => [
+            'css' => [
+                ['filter' => 'CssMin'],
+            ],
+            'js' => [
+                ['filter' => 'JSMin'],
+            ],
+        ],
+    ],
+];

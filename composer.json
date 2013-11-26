@@ -1,0 +1,43 @@
+{
+    "name": "grizzm0/PrxSkeletonApplication",
+    "description": "PRX Skeleton Application",
+    "minimum-stability": "dev",
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "jquery/jquery",
+                "version": "1.10.2",
+                "dist": {
+                    "url": "http://code.jquery.com/jquery-1.10.2.js",
+                    "type": "file"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "html5shiv/html5shiv",
+                "version": "3.7.0",
+                "dist": {
+                    "url": "https://raw.github.com/aFarkas/html5shiv/3.7.0/src/html5shiv.js",
+                    "type": "file"
+                }
+            }
+        }
+    ],
+    "require": {
+        "php": ">=5.4",
+        "zendframework/zendframework": ">2.2.0",
+        "zendframework/zend-developer-tools": "dev-master",
+        "doctrine/doctrine-orm-module": "0.8.*@dev",
+        "spiffy/spiffy-navigation": "dev-master",
+        "rwoverdijk/assetmanager": "dev-master",
+        "leafo/lessphp": "dev-master#6eee2d0",
+        "natxet/CssMin": "dev-master",
+        "mrclay/minify": "dev-master",
+        "twitter/bootstrap": "3.0.0",
+        "jquery/jquery": "1.10.2",
+        "html5shiv/html5shiv": "3.7.0"
+    }
+}
