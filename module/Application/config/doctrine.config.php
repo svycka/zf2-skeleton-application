@@ -4,7 +4,7 @@ return [
         'Application\Entity' => [
             'class' => 'Doctrine\ORM\Mapping\Driver\AnnotationDriver',
             'paths' => [
-                __DIR__ . '/../src/Application/Entity'
+                __DIR__ . '/../src/Application/Entity',
             ],
         ],
 
