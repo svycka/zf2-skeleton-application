@@ -3,7 +3,9 @@ return [
     'containers' => [
         'navigation' => [
             [
-                'name' => 'home',
+                'attributes' => [
+                    'name' => 'home',
+                ],
                 'options' => [
                     'label' => 'Home',
                     'route' => 'home',
