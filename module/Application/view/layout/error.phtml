@@ -18,24 +18,9 @@
 
 </head>
 <body>
-    <header id="navbar" class="navbar navbar-default navbar-fixed-top" role="banner">
-        <div class="container">
-            <div class="navbar-header">
-                <a href="<?= $this->url('home') ?>" class="navbar-brand">PRX</a>
-            </div>
-            <nav class="navbar-collapse" role="navigation">
-                <?= $this->navigationMenu()->renderMenu('navigation', array('ulclass' => 'nav navbar-nav')).PHP_EOL ?>
-            </nav>
-        </div>
-    </header>
-
     <main id="content" class="container" role="main">
         <?= $this->content.PHP_EOL ?>
     </main>
-
-    <footer id="footer" class="container">
-        &copy; <?= date('Y') ?> - <a href="https://github.com/grizzm0">grizzm0</a>
-    </footer>
     <?= $this->inlineScript()->setSeparator(PHP_EOL) ?>
 </body>
 </html>
