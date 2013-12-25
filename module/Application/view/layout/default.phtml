@@ -21,9 +21,14 @@
     <header id="navbar" class="navbar navbar-default navbar-fixed-top" role="banner">
         <div class="container">
             <div class="navbar-header">
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
                 <a href="<?= $this->url('home') ?>" class="navbar-brand">PRX</a>
             </div>
-            <nav class="navbar-collapse" role="navigation">
+            <nav class="collapse navbar-collapse" role="navigation">
                 <?= $this->navigationMenu()->renderMenu('navigation', array('ulclass' => 'nav navbar-nav')).PHP_EOL ?>
             </nav>
         </div>
