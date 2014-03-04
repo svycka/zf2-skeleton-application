@@ -17,9 +17,12 @@ return [
     ],
 
     'module_listener_options' => [
+        'cache_dir'                 => getcwd() .'/data/cache/',
+        'config_cache_enabled'      => true,
+        'module_map_cache_enabled'  => true,
+
         'module_paths' => [
             './module',
-            './vendor',
         ],
 
         'config_glob_paths' => [
