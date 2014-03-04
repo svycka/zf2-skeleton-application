@@ -17,6 +17,5 @@ return [
 
         // Layout
         'layout/default'            => __DIR__ .'/../view/layout/default.phtml',
-        'layout/error'              => __DIR__ .'/../view/layout/error.phtml',
     ],
 ];

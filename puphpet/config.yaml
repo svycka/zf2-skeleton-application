@@ -69,6 +69,8 @@ nginx:
             listen_port: '80'
             index_files:
                 - index.php
+            envvars:
+                - 'APP_ENV dev'
 php:
     install: '1'
     version: '55'

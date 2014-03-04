@@ -1,10 +1,12 @@
 <?php
-################# Development #################
-ini_set('error_reporting', E_ALL);
-ini_set('display_errors', 1);
-define('REQUEST_MICROTIME', microtime(true));
-###############################################
-
 chdir(dirname(__DIR__));
 require(getcwd() .'/vendor/autoload.php');
-Zend\Mvc\Application::init(require(getcwd() .'/config/application.config.php'))->run();
+$config = require(getcwd() .'/config/application.config.php');
+
+// Development mode
+if ($_SERVER['APP_ENV'] === 'dev' && file_exists(getcwd() .'/config/development.config.php')) {
+    define('REQUEST_MICROTIME', microtime(true));
+    $config = Zend\Stdlib\ArrayUtils::merge($config, require(getcwd() .'/config/development.config.php'));
+}
+
+Zend\Mvc\Application::init($config)->run();
