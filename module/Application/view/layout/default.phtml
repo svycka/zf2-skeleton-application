@@ -8,12 +8,11 @@
         ->appendName('viewport', 'width=device-width, initial-scale=1.0') ?>
 
     <?= $this->headLink()->setSeparator(PHP_EOL)
-        ->prependStylesheet($this->basePath() .'/asset/css/prx.css') ?>
+        ->prependStylesheet($this->basePath() .'/asset/css/application.css') ?>
 
     <?= $this->headScript()->setSeparator(PHP_EOL)
-    /*->prependFile($this->basePath() .'/asset/js/bootstrap.js')
-    ->prependFile($this->basePath() .'/asset/js/jquery.js')
-    ->prependFile($this->basePath() .'/asset/js/html5shiv.js', 'text/javascript', array('conditional' => 'lt IE 9'))*/ ?>
+        ->prependFile($this->basePath() .'/asset/js/application.js')
+        ->prependFile('//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js') ?>
 
 </head>
 <body>
