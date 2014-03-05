@@ -1,10 +1,6 @@
 <?php
 return [
     'modules' => [
-        // Doctrine
-        //'DoctrineModule',
-        //'DoctrineORMModule',
-
         // Vendor modules
         'AssetManager',
         'SpiffyNavigation',
