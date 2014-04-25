@@ -1,0 +1,3 @@
+# Forcing the creation of this folder to avoid fatal error from doctrine
+*
+!.gitignore
