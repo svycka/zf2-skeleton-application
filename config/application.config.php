@@ -2,11 +2,12 @@
 return [
     'modules' => [
         // Vendor modules
+        'DoctrineModule',
+        'DoctrineORMModule',
         'AssetManager',
         'SpiffyNavigation',
-
-        // PRX Modules
-        'PrxBootstrap',
+        'TwbBundle',
+        'EdpModuleLayouts',
 
         // Application
         'Application',

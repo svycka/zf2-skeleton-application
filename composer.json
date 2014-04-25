@@ -1,11 +1,14 @@
 {
-    "name": "grizzm0/PrxSkeletonApplication",
-    "description": "PRX Skeleton Application",
+    "name": "svycka/zf2-skeleton-application",
+    "description": "Skeleton Application for ZF2",
     "require": {
         "php": ">=5.4",
-        "zendframework/zendframework": "~2.2",
+        "zendframework/zendframework": "~2.3",
         "spiffy/spiffy-navigation": "~1.0",
-        "grizzm0/prx-bootstrap": "dev-master",
+        "twitter/bootstrap": "v3.1.*",
+        "neilime/zf2-twb-bundle": "dev-master",
+        "evandotpro/edp-module-layouts": "v1.0",
+        "doctrine/doctrine-orm-module": "0.*",
         "rwoverdijk/assetmanager": "~1.3",
         "oyejorge/less.php": "~1.6",
         "natxet/CssMin": "~3.0",

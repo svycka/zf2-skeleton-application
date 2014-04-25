@@ -1,7 +1,7 @@
 <?= $this->doctype().PHP_EOL ?>
 <html lang="en">
 <head>
-    <?= $this->headTitle('PRX Skeleton Application')->setSeparator(' - ')->setAutoEscape(false) ?>
+    <?= $this->headTitle('ZF2 Skeleton Application')->setSeparator(' - ')->setAutoEscape(false) ?>
 
     <?= $this->headMeta()->setSeparator(PHP_EOL)
         ->setCharset('utf-8')
@@ -24,7 +24,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="<?= $this->url('home') ?>" class="navbar-brand">PRX</a>
+                <a href="<?= $this->url('home') ?>" class="navbar-brand">ZF2</a>
             </div>
             <nav class="collapse navbar-collapse" role="navigation">
                 <?= $this->navigationMenu()->renderMenu('navigation', array('ulclass' => 'nav navbar-nav')).PHP_EOL ?>
@@ -37,7 +37,7 @@
     </main>
 
     <footer id="footer" class="container">
-        &copy; <?= date('Y') ?> - <a href="https://github.com/grizzm0">grizzm0</a>
+        &copy; <?= date('Y') ?> - <a href="https://github.com/svycka">svycka</a>
     </footer>
     <?= $this->inlineScript()->setSeparator(PHP_EOL) ?>
 </body>

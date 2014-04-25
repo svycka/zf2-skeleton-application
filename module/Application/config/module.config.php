@@ -1,5 +1,7 @@
 <?php
 return [
+    'doctrine'          => include(__DIR__ .'/doctrine.config.php'),
+    'module_layouts'    => include(__DIR__ .'/layout.config.php'),
     'asset_manager'     => include(__DIR__ .'/assetmanager.config.php'),
     'controllers'       => include(__DIR__ .'/controllers.config.php'),
     'router'            => include(__DIR__ .'/router.config.php'),
