@@ -1,20 +1,20 @@
 ---
 vagrantfile-local:
     vm:
-        box: debian-wheezy72-x64-vbox43
-        box_url: 'http://box.puphpet.com/debian-wheezy72-x64-vbox43.box'
+        box: ubuntu-precise12042-x64-vbox43
+        box_url: 'http://box.puphpet.com/ubuntu-precise12042-x64-vbox43.box'
         hostname: null
         network:
             private_network: 192.168.56.101
             forwarded_port:
-                Tl9owKwGXqam:
-                    host: '8800'
+                U2dhLsvVyaly:
+                    host: '7160'
                     guest: '22'
         provider:
             virtualbox:
                 modifyvm:
                     natdnshostresolver1: on
-                    memory: '4096'
+                    memory: '2048'
                 setextradata:
                     VBoxInternal2/SharedFoldersEnableSymlinksCreate/v-root: 1
         provision:
@@ -26,10 +26,9 @@ vagrantfile-local:
                     - '--hiera_config /vagrant/puphpet/puppet/hiera.yaml'
                     - '--parser future'
         synced_folder:
-            rK0OWX0v6mhv:
-                id: vagrant-root
+            7HXWxdHueZDx:
                 source: ./
-                target: /var/www
+                target: /var/www/awesome
                 nfs: 'false'
         usable_port_range: 2200..2250
     ssh:
@@ -45,8 +44,7 @@ vagrantfile-local:
     vagrant:
         host: detect
 server:
-    packages:
-        - nano
+    packages: {  }
     dot_files:
         -
             bash_aliases: null
@@ -60,14 +58,52 @@ mailcatcher:
         http_port: '1080'
         mailcatcher_path: /usr/local/bin
         log_path: /var/log/mailcatcher/mailcatcher.log
-nginx:
+apache:
     install: '1'
+    settings:
+        user: www-data
+        group: www-data
+        default_vhost: true
+        manage_user: false
+        manage_group: false
+        sendfile: 0
+    modules:
+        - php
+        - rewrite
     vhosts:
-        NZnHBOnHCY3X:
-            server_name: skeleton.prx.dev
-            www_root: /var/www/public
+        TAbb6RfXL6hl:
+            servername: awesome.dev
+            serveraliases:
+                - www.awesome.dev
+            docroot: /var/www/awesome/public
+            port: '80'
+            setenv:
+                - 'APP_ENV dev'
+            override:
+                - All
+            options:
+                - Indexes
+                - FollowSymLinks
+                - MultiViews
+            custom_fragment: ''
+            ssl_cert: ''
+            ssl_key: ''
+            ssl_chain: ''
+            ssl_certs_dir: ''
+    mod_pagespeed: 0
+    mod_spdy: 0
+nginx:
+    install: 0
+    vhosts:
+        pbOMcgqih50s:
+            server_name: awesome.dev
+            server_aliases:
+                - www.awesome.dev
+            www_root: /var/www/awesome.dev
             listen_port: '80'
             index_files:
+                - index.html
+                - index.htm
                 - index.php
             envvars:
                 - 'APP_ENV dev'
@@ -85,11 +121,11 @@ php:
             - pecl_http
     ini:
         display_errors: On
+        error_reporting: '-1'
         session.save_path: /var/lib/php/session
-        error_reporting: E_ALL
-    timezone: Europe/Stockholm
+    timezone: Europe/Vilnius
 xdebug:
-    install: '1'
+    install: 0
     settings:
         xdebug.default_enable: '1'
         xdebug.remote_autostart: '0'
@@ -103,11 +139,11 @@ drush:
         drush.tag_branch: 6.x
 mysql:
     install: '1'
-    root_password: password
-    phpmyadmin: '1'
+    root_password: root
+    phpmyadmin: 0
     adminer: 0
     databases:
-        60f0f1sZiunL:
+        sQF3GPBnYLnn:
             grant:
                 - ALL
             name: application
@@ -115,6 +151,22 @@ mysql:
             user: application
             password: application
             sql_file: ''
+postgresql:
+    install: 0
+    settings:
+        root_password: '123'
+        user_group: postgres
+        encoding: UTF8
+        version: '9.3'
+    databases: {  }
+    adminer: 0
+mariadb:
+    install: 0
+    root_password: '123'
+    phpmyadmin: 0
+    adminer: 0
+    databases: {  }
+    version: '10.0'
 mongodb:
     install: 0
     settings:
